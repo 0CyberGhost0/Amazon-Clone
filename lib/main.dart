@@ -1,4 +1,5 @@
 import 'package:amazon_clone/constants/global_variables.dart';
+import 'package:amazon_clone/features/auth/screens/auth_screen.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -13,9 +14,9 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'AmazonClone',
       theme: ThemeData(
-        scaffoldBackgroundColor: GlobalVariable.backgroundColor,
+        scaffoldBackgroundColor: GlobalVariables.backgroundColor,
         colorScheme: const ColorScheme.light(
-          primary: GlobalVariable.secondaryColor,
+          primary: GlobalVariables.secondaryColor,
         ),
         appBarTheme: const AppBarTheme(
           elevation: 0,
@@ -25,7 +26,7 @@ class MyApp extends StatelessWidget {
         ),
         useMaterial3: true, // can remove this line
       ),
-      home: Scaffold(),
+      home: const AuthScreen(),
     );
   }
 }

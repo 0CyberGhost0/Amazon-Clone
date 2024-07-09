@@ -118,8 +118,10 @@ class _AuthScreenState extends State<AuthScreen> {
                           onTap: () {
                             if (_signUpFormKey.currentState!.validate()) {
                               signUpUser();
+                              print('signup pressed');
                             }
                           },
+                          color: GlobalVariables.secondaryColor,
                         )
                       ],
                     ),
@@ -169,6 +171,7 @@ class _AuthScreenState extends State<AuthScreen> {
                           onTap: () {
                             if (_signInFormKey.currentState!.validate()) {}
                           },
+                          color: GlobalVariables.secondaryColor,
                         )
                       ],
                     ),

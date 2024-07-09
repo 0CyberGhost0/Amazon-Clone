@@ -4,6 +4,7 @@ const User=require('../models/user');
 const bcrypt=require('bcryptjs');
 authRouter.post('/api/signup',async (req,res)=>{
    try {
+    console.log('Inside Sigup operation');
      const {name,email,password}=req.body;
      const existingUser=await User.findOne({email});
      if(existingUser){
@@ -14,7 +15,7 @@ authRouter.post('/api/signup',async (req,res)=>{
          name,
          password:hashPassword,
          email,
-     })
+     });
      user=await user.save();
      res.json(user);
    } catch (e) {

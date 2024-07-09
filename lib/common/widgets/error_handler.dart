@@ -25,6 +25,5 @@ void httpErrorHandler({
       break;
     default:
       showSnackBar(context, jsonDecode(res.body));
-      break;
   }
 }

@@ -1,7 +1,7 @@
 const express=require('express');
 const app=express();
 const mongoose=require('mongoose');
-const authRouter=require('./routes/auth').default;
+const authRouter=require('./routes/auth');
 const User=require('./models/user')
 const bcrypt=require('bcryptjs');
 const dbUrl="mongodb+srv://ved:admin@amazon.mw9rykz.mongodb.net/?retryWrites=true&w=majority&appName=amazon"
@@ -13,11 +13,11 @@ mongoose.connect(dbUrl).then(()=>{
 app.use(express.json());
 app.post('/api/signup',async (req,res)=>{
     try {
-     console.log('Inside Sigup operation');
+     console.log('Inside Signup operation');
       const {name,email,password}=req.body;
       const existingUser=await User.findOne({email});
       if(existingUser){
-          return res.status(400).json({error:"User with same email Already exists"});
+          res.status(400).json({error:"User with same email Already exists"});
       }
       const hashPassword=await bcrypt.hash(password,8);
       let user=new User({

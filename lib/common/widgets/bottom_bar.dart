@@ -1,3 +1,4 @@
+import 'package:amazon_clone/features/account/screen/account_screen.dart';
 import 'package:flutter/material.dart';
 // import 'package:provider/provider.dart';
 import 'package:badges/badges.dart' as badges;
@@ -23,9 +24,7 @@ class _BottomBarState extends State<BottomBar> {
     // const Center(
     //   child: Text('First'),
     // ),
-    const Center(
-      child: Text('Account Page'),
-    ),
+    const AccountScreen(),
     const Center(
       child: Text('Cart Page'),
     ),
